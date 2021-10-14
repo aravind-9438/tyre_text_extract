@@ -26,7 +26,7 @@ def cartonize_image(our_image):
 
 st.title("Image Processing")
 
-img_file = st.file_uploader("Upload tyre Images", type=['png','jpeg','jpg'])
+img_file = st.file_uploader("Upload your Images", type=['png','jpeg','jpg'])
  
 if(img_file is not None):
 	st.header("Original Image")
