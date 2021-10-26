@@ -49,8 +49,7 @@ if(img_file is not None):
 	st.write(result_text)
 	
 	st.balloons()
-else:
-	st.write("Upload an Image")
+ 
 	
 
 	
