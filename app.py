@@ -3,7 +3,7 @@ from PIL import Image
 import cv2
 import numpy as np
 from numpy import asarray
-import pytesseract
+import easyocr as ocr
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Users\aravind reddy\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"  
 
@@ -26,20 +26,33 @@ def load_image(img_file):
 	return img
 
  
+@st.cache
+def load_model(): 
+    reader = ocr.Reader(['en'],model_storage_directory='.')
+    return reader
 
 st.title("Image Processing")
 
 img_file = st.file_uploader("Upload tyre Images", type=['png','jpeg','jpg'])
 
  
-
+reader = load_model()
 
 if(img_file is not None):
-  img = load_image(img_file)
-  custom_config = r'--oem 3 --psm 6'
-  result = pytesseract.image_to_string(img, config=custom_config) 
-
-  st.write(result)
+	img = load_image(img_file)
+	
+	with st.spinner("🤖 AI is at Work! "):
+		result = reader.readtext(np.array(input_image))
+		result_text = [] #empty list for results
+		
+		for text in result:
+			result_text.append(text[1])
+	st.write(result_text)
+	
+	st.balloons()
+else:
+	st.write("Upload an Image")
+	
 
 	
 	  
