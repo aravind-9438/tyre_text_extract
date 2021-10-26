@@ -5,8 +5,7 @@ import numpy as np
 from numpy import asarray
 import easyocr as ocr
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Users\aravind reddy\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"  
-
+ 
 
 st.set_page_config(
       page_title="Image processing",
