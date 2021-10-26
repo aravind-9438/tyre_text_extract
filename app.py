@@ -42,7 +42,7 @@ if(img_file is not None):
 	img = load_image(img_file)
 	
 	with st.spinner("🤖 AI is at Work! "):
-		result = reader.readtext(np.array(input_image))
+		result = reader.readtext(np.array(img))
 		result_text = [] #empty list for results
 		
 		for text in result:
