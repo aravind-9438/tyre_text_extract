@@ -42,15 +42,17 @@ if(img_file is not None):
 	
 	with st.spinner("🤖 AI is at Work! "):
 		result = reader.readtext(np.array(img))
-		result_text = [] #empty list for results
-		
+		result_text = ''  
+		p = []
 		for text in result:
  
 			if(text[-1]>0.6):
-				result_text.append([text[1],text[-1]])
+				result_text+ = [text[1],text[-1]]
+				p.append(text[-1])
  
 			 
 	st.write(result_text)
+	st.write(sum(p)/len(p))
 	
 	st.balloons()
  
