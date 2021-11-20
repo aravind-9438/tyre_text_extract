@@ -52,7 +52,7 @@ if(img_file is not None):
  
 		p = (sum(p)*100)//len(p)	 
 	st.write("Predicted text: "+ result_text)
-	st.write("Accuracy: "+str(p))
+	st.write("Accuracy: " + str(p) + "%")
 	
 	st.balloons()
  
