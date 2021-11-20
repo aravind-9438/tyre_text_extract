@@ -51,7 +51,7 @@ if(img_file is not None):
 				p.append(text[-1])
  
 			 
-	st.write("Predicted text: "+ ***result_text***)
+	st.write("Predicted text: "+ **result_text**)
 	st.write("Accuracy: "+str(sum(p)/len(p)))
 	
 	st.balloons()
