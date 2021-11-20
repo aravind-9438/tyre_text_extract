@@ -50,7 +50,9 @@ if(img_file is not None):
 				result_text += text[1]
 				p.append(text[-1])
  
-		p = (sum(p)*100)//len(p)	 
+		p = (sum(p)*100)//len(p)
+
+	st.image(img)	 
 	st.write("Predicted text: "+ result_text)
 	st.write("Accuracy: " + str(p) + "%")
 	
