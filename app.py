@@ -32,7 +32,7 @@ if(img_file is not None):
 	img = load_image(img_file)
 
 	kernal = np.ones((3,3), np.uint8)
-	erosion = cv2.erode(img, kernal, iterations=1)
+	erosion = cv2.erode(np.array(img), kernal, iterations=1)
 	guassian = cv2.GaussianBlur(erosion, (5,5),cv2.BORDER_DEFAULT)
 	
 	with st.spinner("🤖 AI is at Work! "):
