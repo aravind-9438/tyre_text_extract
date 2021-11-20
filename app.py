@@ -26,11 +26,17 @@ img_file = st.file_uploader("Upload tyre Images", type=['png','jpeg','jpg'])
  
 reader = load_model()
 
+
+
 if(img_file is not None):
 	img = load_image(img_file)
+
+	kernal = np.ones((3,3), np.uint8)
+	erosion = cv2.erode(img, kernal, iterations=1)
+	guassian = cv2.GaussianBlur(erosion, (5,5),cv2.BORDER_DEFAULT)
 	
 	with st.spinner("🤖 AI is at Work! "):
-		result = reader.readtext(np.array(img))
+		result = reader.readtext(np.array(guassian))
 		result_text = ''  
 		p = []
 		for text in result:
