@@ -45,8 +45,7 @@ if(img_file is not None):
 		result_text = [] #empty list for results
 		
 		for text in result:
-			if(text[-1]>0.7):
-				result_text.append(text[1])
+			result_text.append([text[1],text[-1]])
 	st.write(result_text)
 	
 	st.balloons()
