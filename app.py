@@ -7,18 +7,7 @@ import easyocr as ocr
 
  
 
-st.set_page_config(
-      page_title="Image processing",
-      page_icon="tyre.jpg",
-      layout="wide",
-      initial_sidebar_state="expanded",
-      menu_items={
-          'Get Help': 'https://www.extremelycoolapp.com/help',
-          'Report a bug': "https://www.extremelycoolapp.com/bug",
-          'About': "# This is a header. This is an *extremely* cool app!"
-      }
-  )
-
+ 
 @st.cache
 def load_image(img_file):
 	img = Image.open(img_file)
@@ -30,7 +19,7 @@ def load_model():
     reader = ocr.Reader(['en'],model_storage_directory='.')
     return reader
 
-st.title("Image Processing")
+st.title("Tyre Text Extraction")
 
 img_file = st.file_uploader("Upload tyre Images", type=['png','jpeg','jpg'])
 
@@ -52,7 +41,7 @@ if(img_file is not None):
  
 		p = (sum(p)*100)//len(p)
 
-	st.image(img)	 
+	st.image(img,width=15)	 
 	st.write("Predicted text: "+ result_text)
 	st.write("Accuracy: " + str(p) + "%")
 	
