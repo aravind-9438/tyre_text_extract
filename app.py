@@ -37,7 +37,7 @@ if(img_file is not None):
 	erosion = cv2.erode(np.array(img), kernal, iterations=1)
 	guassian = cv2.GaussianBlur(erosion, (5,5),cv2.BORDER_DEFAULT)
 	ret, o5 = cv2.threshold(np.array(img), th, max_val, cv2.THRESH_TRUNC)
-	# _,t = cv2.threshold(guassian, 90, max_val, cv2.THRESH_TRUNC + cv2.THRESH_OTSU )
+	_,t = cv2.threshold(guassian, 90, max_val, cv2.THRESH_TRUNC + cv2.THRESH_OTSU )
 
 	
 	with st.spinner("🤖 AI is at Work! "):
@@ -53,7 +53,7 @@ if(img_file is not None):
 		p = int(max(p)*100)
 
 	st.image(img,width=250,caption="Original image")
-	st.image(guassian,width=250,caption="preprocessed image")	 
+	st.image(t,width=250,caption="preprocessed image")	 
 	st.success("Predicted text: "+ result_text)
 	st.success("Accuracy: " + str(p) + "%")
 	
