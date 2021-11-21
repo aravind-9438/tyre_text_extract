@@ -58,7 +58,7 @@ if(img_file is not None):
 		p = int(max(p)*100)
 
 	st.image(img,width=250,caption="Original image")
-	st.image(o5,width=250,caption="preprocessed image")	 
+	st.image(mean,width=250,caption="preprocessed image")	 
 	st.success("Predicted text: "+ result_text)
 	st.success("Accuracy: " + str(p) + "%")
 	
