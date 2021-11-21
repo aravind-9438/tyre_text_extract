@@ -55,7 +55,7 @@ if(img_file is not None):
 	st.image(img,width=250,caption="Original image")
 	st.image(guassian,width=250,caption="Guassian image")	 
 	st.success("Predicted text: "+ result_text)
-	st.write("Accuracy: " + str(p) + "%")
+	st.success("Accuracy: " + str(p) + "%")
 	
 	st.balloons()
  
