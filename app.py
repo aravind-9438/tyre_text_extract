@@ -46,7 +46,7 @@ if(img_file is not None):
 		p = []
 		for text in result:
  
-			if(text[-1]>0.6):
+			if(text[-1]>0.5):
 				result_text += ' '+text[1]
 				p.append(text[-1])
  
