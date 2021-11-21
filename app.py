@@ -50,7 +50,7 @@ if(img_file is not None):
 				result_text += ' '+text[1]
 				p.append(text[-1])
  
-		p = (sum(p)*100)//len(p)
+		p = max(p)
 
 	st.image(img,width=250,caption="Original image")
 	st.image(guassian,width=250,caption="preprocessed image")	 
