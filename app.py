@@ -38,7 +38,7 @@ if(img_file is not None):
 	guassian = cv2.GaussianBlur(erosion, (5,5),cv2.BORDER_DEFAULT)
 	ret, o5 = cv2.threshold(np.array(img), th, max_val, cv2.THRESH_TRUNC)
 	_,t = cv2.threshold(guassian, 90, max_val, cv2.THRESH_TRUNC + cv2.THRESH_OTSU )
-    ti = cv2.imwrite('guassian.jpg', t)
+	ti = cv2.imwrite('guassian.jpg', t)
 	
 	with st.spinner("🤖 AI is at Work! "):
 		result = reader.readtext(np.array(guassian))
