@@ -32,14 +32,16 @@ if(img_file is not None):
 	img = load_image(img_file)
 
 	max_val=255
+	th = 125
 	kernal = np.ones((3,3), np.uint8)
 	erosion = cv2.erode(np.array(img), kernal, iterations=1)
 	guassian = cv2.GaussianBlur(erosion, (5,5),cv2.BORDER_DEFAULT)
+	ret, o5 = cv2.threshold(np.array(img), th, max_val, cv2.THRESH_TRUNC)
 	# _,t = cv2.threshold(guassian, 90, max_val, cv2.THRESH_TRUNC + cv2.THRESH_OTSU )
 
 	
 	with st.spinner("🤖 AI is at Work! "):
-		result = reader.readtext(np.array(img))
+		result = reader.readtext(np.array(o5))
 		result_text = ''  
 		p = []
 		for text in result:
