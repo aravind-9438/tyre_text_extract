@@ -39,7 +39,7 @@ if(img_file is not None):
 
 	
 	with st.spinner("🤖 AI is at Work! "):
-		result = reader.readtext(np.array(guassian))
+		result = reader.readtext(np.array(img))
 		result_text = ''  
 		p = []
 		for text in result:
