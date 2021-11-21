@@ -33,11 +33,13 @@ if(img_file is not None):
 
 	max_val=255
 	th = 125
-	kernal = np.ones((3,3), np.uint8)
+	kernal = np.ones((3,3), np.uint16)
 	erosion = cv2.erode(np.array(img), kernal, iterations=1)
 	guassian = cv2.GaussianBlur(erosion, (5,5),cv2.BORDER_DEFAULT)
 	ret, o5 = cv2.threshold(np.array(img), th, max_val, cv2.THRESH_TRUNC)
 	_,t = cv2.threshold(guassian, 90, max_val, cv2.THRESH_TRUNC + cv2.THRESH_OTSU )
+	mean = cv2.adaptiveThreshold(guassian, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, block_size, constant)
+
 
 	
 	with st.spinner("🤖 AI is at Work! "):
