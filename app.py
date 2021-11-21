@@ -34,7 +34,7 @@ if(img_file is not None):
 
 	max_val=255
 	th = 125
-	block_size = 450
+	block_size = 413
 	constant = 2
 	kernal = np.ones((3,3), np.uint8)
 	erosion = cv2.erode(np.array(img), kernal, iterations=1)
