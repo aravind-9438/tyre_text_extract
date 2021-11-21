@@ -57,7 +57,7 @@ if(img_file is not None):
 	st.success("Predicted text: "+ result_text)
 	st.success("Accuracy: " + str(p) + "%")
 	
-	st.balloons()
+	 
  
 	
 
