@@ -30,7 +30,7 @@ reader = load_model()
 
 if(img_file is not None):
 	img = load_image(img_file)
-	img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+	img = cv2.cvtColor(np.array(img), cv2.COLOR_BGR2GRAY)
 
 	max_val=255
 	th = 125
