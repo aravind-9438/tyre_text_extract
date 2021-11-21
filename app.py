@@ -53,7 +53,7 @@ if(img_file is not None):
 		p = (sum(p)*100)//len(p)
 
 	st.image(img,width=250,caption="Original image")
-	st.image(guassian,width=250,caption="Guassian image")	 
+	st.image(guassian,width=250,caption="preprocessed image")	 
 	st.success("Predicted text: "+ result_text)
 	st.success("Accuracy: " + str(p) + "%")
 	
