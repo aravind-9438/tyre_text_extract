@@ -30,6 +30,7 @@ reader = load_model()
 
 if(img_file is not None):
 	img = load_image(img_file)
+	img = cv.imread(img, cv.IMREAD_GRAYSCALE)
 
 	max_val=255
 	th = 125
